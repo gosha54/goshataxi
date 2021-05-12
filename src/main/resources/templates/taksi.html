@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, user-scalable=0, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.png" type="image/x-icon"> -->
+    <title>Такси 322</title>
+
+    <link href="/static/bootstrap.css" rel="stylesheet"/>
+    <link href="/static/site.css" rel="stylesheet"/>
+    <link href="/static/responsiv_styles.css" rel="stylesheet"/>
+    <link href="/static/main.css" rel="stylesheet"/>
+    <link href="/static/Style_client.css" rel="stylesheet"/>
+    <link href="/static/controls.css" rel="stylesheet"/>
+    <link href="/static/another.css" rel="stylesheet"/>
+    <script src="/static/scripts/jquery-2.2.0.js"></script>
+    <script src="/static/scripts/jquery-ui-1.8.24.js"></script>
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/main-client.js"></script>
+    <script src="/static/scripts/jquery.maskedinput.js"></script>
+    <script src="/static/scripts/device.js"></script>
+    <script src="/static/scripts/jquery.json-2.2.min.js"></script>
+</head>
+<body>
+<div id="cl_header">
+
+    <nav class="navbar cl-nav @*navbar-default*@" role="navigation">
+
+        <div class="container-fluid">
+            <!-- Название компании и кнопка, которая отображается для мобильных устройств группируются для лучшего отображения при свертывание -->
+            <div class="navbar-header">
+                <button id="nav-btn" type="button" class="navbar-toggle cl-nav-btn" data-toggle="collapse" data-target="#nav-sections">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/taksi/" alt="Такси 152"><img src="/static/icons/Logo.png" width="35" height="35" alt="Такси 152" /></a>
+
+                <div class="numbers hide-from-768" style=" margin-top: 30px;">
+                    <div class="phone-icon">
+                        <img src="/static/icons/phone-icon.png" />
+                    </div>
+                    <div class="dd-numbers">
+                        <div class="city_phone">322</div>
+                        <div class="viber">+ 375 (29) 1111 322</div>
+                        <div class="velcom">+ 375 (29) 2222 322</div>
+                        <div class="velcom">+ 375 (29) 3333 322</div>
+                        <div class="velcom">+ 375 (44) 4444 322</div>
+
+                        <div class="mts">+ 375 (29) 5555 322</div>
+                        <div class="mts">+ 375 (29) 6666 322</div>
+                        <div class="mts">+ 375 (29) 7777 322</div>
+                        <div class="life">+ 375 (25) 8888 322</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Группируем ссылки, формы, выпадающее меню и прочие элементы -->
+            <div class="collapse navbar-collapse" id="nav-sections">
+                <ul class="nav navbar-nav sections-list">
+                    <li>
+                        <a href="/taksi/#order-container"><h4>Онлайн заказ</h4></a>
+                    </li>
+                    <li class="hide-to-991">
+                        <a href="/taksi/#offer"><h4>Наши бонусы</h4></a>
+                    </li>
+                    <li>
+                        <a href="/taksi/#price-container"><h4>Тарифы</h4></a>
+                    </li>
+                    <li>
+                        <a href="/taksi/#driver-container"><h4>Водителям</h4></a>
+                    </li>
+                    <li>
+                        <a href="/greetings"><h4>Авторизация</h4></a>
+                    </li>
+                </ul>
+
+
+
+
+                <div class="numbers  hide-to-768 mrg-top-to-1199-30">
+                    <div class="phone-icon">
+                        <img src="/static/icons/phone-icon.png" />
+                    </div>
+                    <div class="phone-block hide-to-1199">
+                        <div>Заказ с любого номера: 322</div>
+                        <a href="#">номера мобильных операторов</a>
+                    </div>
+                    <div class="dd-numbers">
+                        <div class="city_phone">322</div>
+                        <div class="viber">+ 375 (29) 1111 322</div>
+                        <div class="velcom">+ 375 (29) 2222 322</div>
+                        <div class="velcom">+ 375 (29) 3333 322</div>
+                        <div class="velcom">+ 375 (44) 4444 322</div>
+
+                        <div class="mts">+ 375 (29) 5555 322</div>
+                        <div class="mts">+ 375 (29) 6666 322</div>
+                        <div class="mts">+ 375 (29) 7777 322</div>
+                        <div class="life">+ 375 (25) 8888 322</div>
+                    </div>
+                </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+
+
+    </nav>
+
+
+
+
+
+</div>
+
+<div id="wrapper-client">
+
+
+    <input data-val="true" data-val-required="The Language field is required." id="Language" name="Language" type="hidden" value="ru" />
+    <div id="wrapper-content">
+
+        <div id="order-block">
+            <div id="order-container">
+                <div id="order-wrapper">
+
+                    <label id="ErrorMsgBlock"></label>
+
+                    <div id="order-header">
+                        <h1>
+                            ЗАКАЗАТЬ ТАКСИ
+
+                        </h1>
+                        <h3>Тариф по Минску всего  55 коп за 1 км</h3>
+
+                        <div id="LastOrderContainer">
+            <span id="hide-last-order">
+                <!--?xml version="1.0" encoding="iso-8859-1"?-->
+                <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 46 46" style="enable-background:new 0 0 46 46;" xml:space="preserve">
+<g>
+	<g id="Delete_1_">
+		<g>
+			<path d="M23,0C10.298,0,0,10.298,0,23s10.298,23,23,23s23-10.298,23-23S35.702,0,23,0z M23,42C12.507,42,4,33.493,4,23     S12.507,4,23,4s19,8.507,19,19S33.493,42,23,42z M30.305,16.403l-0.707-0.707c-0.586-0.585-1.537-0.585-2.123,0L23,20.171     l-4.475-4.475c-0.586-0.585-1.536-0.585-2.121,0l-0.708,0.707c-0.585,0.586-0.585,1.536,0,2.122L20.171,23l-4.475,4.475     c-0.585,0.586-0.585,1.536,0,2.121l0.708,0.709c0.585,0.584,1.535,0.584,2.121,0L23,25.829l4.475,4.476     c0.586,0.584,1.537,0.584,2.123,0l0.707-0.709c0.584-0.585,0.584-1.535,0-2.121L25.829,23l4.476-4.475     C30.889,17.939,30.889,16.989,30.305,16.403z" fill="#FFFFFF"></path>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+            </span>
+                            <h3>Предыдущий заказ</h3>
+                            <br>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" style="" viewBox="0 0 407.605 407.605" x="0px" y="0px" width="512px" height="512px" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:space="preserve" version="1.1">
+<g>
+	<g>
+		<path fill="#fccb28" d="M 203.805 303.261 c 11.283 0 105.451 -116.968 105.451 -175.209 c 0 -58.239 -47.213 -105.452 -105.451 -105.452 c -58.242 0 -105.453 47.213 -105.453 105.452 C 98.352 186.292 192.93 303.261 203.805 303.261 Z M 135.69 124.359 c 0 -37.618 30.494 -68.113 68.115 -68.113 c 37.617 0 68.113 30.495 68.113 68.113 c 0 37.618 -30.496 68.114 -68.113 68.114 C 166.184 192.473 135.69 161.977 135.69 124.359 Z"></path>
+        <path fill="#fccb28" d="M 391.088 222.666 c 0 -9.713 -7.9 -17.614 -17.613 -17.614 c 0 0 -47.016 0 -64.223 0 c -1.34 0 -2.883 -0.071 -4.58 2.776 c -3.389 5.688 -3.092 5.188 -6.273 10.453 c -1.48 2.449 0.76 3.279 1.682 3.279 c 20.564 0 73.396 0 73.396 0 c 0.588 0 1.104 0.518 1.104 1.104 l 16.52 144.727 c 0 0.588 -0.516 1.105 -1.105 1.105 H 17.616 c -0.592 0 -1.105 -0.518 -1.105 -1.105 l 16.517 -144.725 c 0 -0.588 0.516 -1.104 1.105 -1.104 c 0 0 54.619 0 72.826 0 c 1.5 0 3.875 -0.872 1.174 -5.269 c -3.169 -5.157 -1.941 -3.646 -5.299 -9.354 c -1.25 -2.125 -2.983 -1.888 -5.328 -1.888 c -15.844 0 -63.373 0 -63.373 0 c -9.709 0 -17.613 7.901 -17.613 17.614 L 0 367.393 c 0 9.713 7.902 17.613 17.615 17.613 h 372.377 c 9.715 0 17.613 -7.9 17.613 -17.613 L 391.088 222.666 Z"></path>
+	</g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+                                <g>
+</g>
+</svg>
+                            <div id="LastAddress">
+                                <label id="last_street_lbl"></label>
+                                <label id="last_Building_lbl"></label>
+                                <label id="last_Apartment_lbl"></label>
+                            </div>
+                            <div style="color:white;">Нажмите здесь чтобы скопировать в форму заказа</div>
+                        </div>
+                    </div>
+                    <div id="order-body">
+
+                        <form action = "#" method="post" th:action="@{/taksiPost}" th:object="${ordersEntity}" > <!--action="/Home/OrderTaxi" class="" method="post" role="form"--><input id="Certificate" name="Certificate" type="hidden" value=""><input data-val="true" data-val-required="The Service field is required." id="Service" name="Service" type="hidden" value="Unknown"><input data-val="true" data-val-required="The PaymentMethod field is required." id="PaymentMethod" name="PaymentMethod" type="hidden" value="Cash"><input data-val="true" data-val-required="The isUniversal field is required." id="isUniversal" name="isUniversal" type="hidden" value="false"><input data-val="true" data-val-required="The isMinivan field is required." id="isMinivan" name="isMinivan" type="hidden" value="true"><input data-val="true" data-val-required="The isElit field is required." id="isElit" name="isElit" type="hidden" value="false"><input id="OrderCaptchaValue" name="OrderCaptchaValue" type="hidden" value=""><input id="last_Building" name="last_Building" type="hidden" value=""><input id="last_Block" name="last_Block" type="hidden" value=""><input id="last_Apartment" name="last_Apartment" type="hidden" value=""><input id="last_Entrance" name="last_Entrance" type="hidden" value=""><input id="last_street" name="last_street" type="hidden" value="">
+                            <div class="row margin-reset">
+                            <div class="col-xs-12 col-sm-4 block-opacity">
+                                <div style="position: relative;">
+                                    <input th:field="*{street}" aria-haspopup="true" class="ui-autocomplete-input" data-val="true" data-val-required="Обязательно для заполнения" id="street" maxlength="30" name="Street" placeholder="Улица *" role="textbox" type="text" value="" autocomplete="off" aria-autocomplete="list">
+                                    <div id="street-variants">
+                                        <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" style="z-index: 1; top: -10px; left: -1px; display: none; width: 274px; position: relative;"><li class="ui-menu-item" role="menuitem"><a class="ui-corner-all" tabindex="-1">Яблоневая ул.</a></li><li class="ui-menu-item" role="menuitem"><a class="ui-corner-all" tabindex="-1">Яковлева ул. (Копище)</a></li><li class="ui-menu-item" role="menuitem"><a class="ui-corner-all" tabindex="-1">Якубова Гуляма ул.</a></li><li class="ui-menu-item" role="menuitem"><a class="ui-corner-all" tabindex="-1">Якубовичи н.п.</a></li><li class="ui-menu-item" role="menuitem"><a class="ui-corner-all" tabindex="-1">Якубовского ул.</a></li></ul></div>
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="col-xs-6 col-sm-2">
+
+                                <input th:field="*{house}" aria-haspopup="true" class="only-numbers" id="Building" maxlength="4" name="Building" placeholder="Дом" role="textbox" type="tel" value="">
+
+                            </div>
+                            <div class="col-xs-6 col-sm-2">
+                                <input th:field="*{building}" aria-haspopup="true" class="" id="Block" maxlength="5" name="Block" placeholder="Корпус" role="textbox" type="text" value="">
+
+                            </div>
+                            <div class="col-xs-6 col-sm-2">
+                                <input th:field="*{apartment}" aria-haspopup="true" class="only-numbers" id="Apartment" maxlength="5" name="Apartment" placeholder="Квартира" role="textbox" type="tel" value="">
+
+                            </div>
+                            <div class="col-xs-6 col-sm-2">
+                                <input th:field="*{entrance}" aria-haspopup="true" class="only-numbers" id="Entrance" maxlength="3" name="Entrance" placeholder="Подъезд" role="textbox" type="tel" value="">
+
+                            </div>
+                            <div class="row margin-reset">
+                                <div class="col-xs-12 col-sm-4">
+
+                                    <input th:field="*{name}" aria-haspopup="true" class="" data-val="true" data-val-required="Обязательно для заполнения" id="Name" maxlength="30" name="Name" placeholder="Имя *" role="textbox" type="text" value="">
+                                </div>
+                                <div class="col-xs-12 col-sm-4">
+                                    <div id="phone-container" class="BY-phone-format">
+                                        <input aria-haspopup="true" class="only-numbers" id="CountryPhoneCode" maxlength="5" name="CountryPhoneCode" placeholder="Код *" role="textbox" type="tel" value="375">
+
+                                        <input aria-haspopup="true" class="only-numbers" id="OperatorPhoneCode" maxlength="2" name="OperatorPhoneCode" placeholder="XX*" role="textbox" type="tel" value="">
+
+
+                                        <input th:field="*{phone}" aria-haspopup="true" class="only-numbers" data-val="true" data-val-required="Обязательно для заполнения" id="Phone" maxlength="12" name="Phone" placeholder="Tелефон *" role="textbox" type="tel" value="">
+                                    </div>
+
+
+
+                                </div>
+                                <div class="col-xs-12 col-sm-4">
+                                    <textarea aria-haspopup="true" class="" cols="20" id="Note" maxlength="130" name="Note" placeholder="Пометки" role="textbox" rows="2" type="text"></textarea>
+
+                                </div>
+                            </div>
+                            <div>
+                                <div class="row car-img-block margin-reset">
+                                    <div class="carbtn col-xs-3 col-sm-3" style=" border-right: 1px solid rgba(255, 255, 255, 0.19);">
+                                        <div id="lbl-standart" class="carType_icon" body_type="1">
+                                            <!--?xml version="1.0" encoding="utf-8"?-->
+                                            <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="51px" height="20px" viewBox="0 0 51 20" enable-background="new 0 0 51 20" xml:space="preserve">
+<path fill="none" d="M50.767,12.538c-0.127-0.898-0.381-1.379-1.018-1.824c-1.692-1.18-8.272-2.778-10.794-3.251
+	c-1.571-1.61-3.928-3.806-6.384-5.306c-1.477-0.902-3.37-1.361-4.365-1.5c-0.421-0.058-6.562-0.639-12.223-0.278
+	C11.77,0.649,8.519,4.265,5.479,6.026C3.944,6.233,3.238,6.348,1.803,6.649C0.44,6.936-0.142,10.714,0.02,13.573
+	c0.064,1.144,1.37,1.779,2.099,1.877c0.72,0.096,3.055,0.349,5.602,0.62c0.165,2.167,1.947,3.889,4.114,3.889
+	c1.875,0,3.468-1.334,3.97-3.085c0.058,0.005,0.096-0.035,0.096-0.035s12.417,0,21.486,0c0.504,2.07,2.091,3.032,3.963,3.032
+	c1.869,0,3.459-0.961,3.964-3.032c0.862,0,1.368,0,1.398,0c0,0,1.636-0.019,2.582-0.316c0.678-0.211,1.228-0.571,1.418-1.238
+	C50.82,14.914,50.868,13.251,50.767,12.538z M11.694,7.107c-0.899-0.064-2.487-0.135-1.789-0.913
+	c0.698-0.778,2.759-2.402,4.25-3.111c1.687-0.803,3.774-0.738,4.573-0.732l0.417,4.984L11.694,7.107z M35.073,7.661L21.248,7.335
+	L20.673,2.36c0,0,6.323,0.057,7.953,0.425c1.373,0.31,2.426,0.958,3.426,1.54c1.984,1.208,3.656,2.917,3.738,3.139
+	C35.871,7.686,35.53,7.661,35.073,7.661z"></path>
+</svg>
+
+                                            <p>Стандарт</p>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="carbtn col-xs-3 col-sm-3" style=" border-right: 1px solid rgba(255, 255, 255, 0.19);">
+                                        <div id="lbl-universal" class="carType_icon" body_type="2">
+                                            <!--?xml version="1.0" encoding="utf-8"?-->
+                                            <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="51px" height="21px" viewBox="0 0 51 21" enable-background="new 0 0 51 21" xml:space="preserve">
+<path fill="none" d="M49.802,10.535c-0.757-0.938-3.156-1.861-6.685-2.463c-3.53-0.603-5.484-0.93-6.081-1.216
+	c-0.505-0.243-5.236-3.696-7.132-4.933c-0.649-0.424-2.636-1.739-4.094-1.883C22.3-0.308,12.752-0.305,9.56,0.183
+	c-1.511,0.231-2.042,0.932-3.004,1.97c-0.804,0.868-3.385,3.92-4.101,4.573C1.972,7.167,1.58,7.764,1.58,8.34c0,0.5,0,3.459,0,3.767
+	c0,0.307-1.18,1.075-1.368,1.19c-0.189,0.116-0.137,1.46-0.137,2.113c0,0.578,0.479,1.077,1.308,1.268
+	c0.434,0.1,2.832,0.284,5.033,0.437c0.254,2.16,2.06,3.696,4.246,3.696c2.099,0,3.854-1.686,4.215-3.754c5.641,0,15.396,0,23.115,0
+	c0.36,2.069,2.113,3.599,4.213,3.599c2.098,0,3.854-1.53,4.216-3.599c1.822,0,2.957,0,3.053,0c0.758,0,1.136-0.003,1.307-0.69
+	C50.949,15.68,50.574,11.491,49.802,10.535z M6.218,5.825c0.339-0.539,1.366-1.963,2.136-2.748C8.694,2.731,9.47,1.89,10.55,1.754
+	c1.143-0.216,3.343-0.216,3.343-0.216L11.31,6.711c0,0-4.206,0-4.771,0C5.973,6.711,5.869,6.377,6.218,5.825z M21.382,6.711h-7.696
+	l2.263-5.172h5.433V6.711z M32.658,6.711c-0.491,0-9.245,0-9.245,0V1.539c0,0,1.273-0.007,1.946,0.086
+	c0.906,0.125,1.642,0.572,2.321,1.02c2.235,1.47,4.976,3.389,5.167,3.584C33.093,6.478,33.149,6.711,32.658,6.711z"></path>
+</svg>
+
+                                            <p>Универсал</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="carbtn col-xs-3 col-sm-3" style=" border-right: 1px solid rgba(255, 255, 255, 0.19);">
+                                        <div id="lbl-minivan" class="carType_icon icon-selected" body_type="3">
+                                            <!--?xml version="1.0" encoding="utf-8"?-->
+                                            <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="50.864px" height="22.999px" viewBox="0 0 50.864 22.999" enable-background="new 0 0 50.864 22.999" xml:space="preserve">
+<path fill="none" d="M50.729,14.752c-0.764-2.913-4.457-4.114-9.492-6.045c-1.568-0.839-5.841-7.146-12.98-8.313
+	C25.676-0.027,7.25-0.309,4.361,0.614c-0.803,0.257-1.674,1.1-2.25,1.921C-1.355,7.49,0.58,15.7,0.58,15.7L0,16.707v1.992
+	c0,0,2.598,0.582,3.857,0.86c0.655,1.833,2.365,3.44,4.386,3.44c1.966,0,3.646-1.168,4.341-2.719h25.445
+	c0,0,0.151-0.288,0.411-0.289c0.693,1.756,2.382,2.864,4.35,2.864c1.977,0,3.675-1.338,4.363-3.111
+	c1.423-0.004,2.529-0.043,2.834-0.043C50.775,19.701,51.059,16.012,50.729,14.752z M4.67,3.243c1.354-0.995,7.567-0.647,7.567-0.647
+	l-0.012,6.83c0,0-8.834,0-9.537,0C2.566,8.393,3.185,4.335,4.67,3.243z M22.864,9.426h-8.129v-6.72h8.129V9.426z M25.405,9.426
+	V2.479c0,0,2.01,0.127,3.748,0.512c3.797,0.84,8.959,6.435,8.959,6.435H25.405z"></path>
+</svg>
+
+                                            <p>Минивэн</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="carbtn col-xs-3 col-sm-3">
+                                        <div id="lbl-comfort" class="carType_icon" body_type="4">
+                                            <!--?xml version="1.0" encoding="utf-8"?-->
+                                            <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="62px" height="20px" viewBox="0 0 62 20" enable-background="new 0 0 62 20" xml:space="preserve">
+<path fill="none" d="M61.782,14.963c0,0,0-0.085-0.001-0.228h0.212v-2.196h-0.218c0,0,0-0.002,0-0.003
+	c-1.073-0.951-0.79-3.272-2.099-3.993c0.03-0.135,0.047-0.298,0.047-0.473c0-0.461-0.118-0.836-0.262-0.836
+	c-0.145,0-0.262,0.375-0.262,0.836c0,0.106,0.007,0.207,0.018,0.301c-2.998-1.256-6.544-1.654-10.146-2.194
+	c-1.233-0.185-2.513-0.519-3.699-0.521c-1.761-0.003-2.656-0.607-4.14-1.39c-3.014-1.59-5.906-3.351-9.593-3.915
+	c-0.206-0.031-0.416-0.059-0.626-0.083c-4.406-0.563-9.433-0.148-13.478,0.434C17.206,0.621,17.077,0.012,16.677,0
+	c-0.166,0.201,0.354,0.841-0.023,0.963C11.94,2.164,7.976,4.398,2.334,4.685C1.569,5.54,1.888,7.285,1.326,8.697
+	c-0.271,0.68-0.91,1.143-1.057,1.738c-0.147,0.595-0.303,1.916-0.265,2.173c0.14,0.942,1.205,1.253,1.234,2.259
+	c2.534,0.136,4.599,0.446,6.695,0.869h0.713c0.254,2.177,2.042,3.9,4.306,4.063c1.458,0.105,2.645-0.381,3.571-1.175
+	c0.569-0.487,1.091-1.19,1.38-2.053h0.001l1.127,0.209h11.98c0.213,0.001,0.413,0.002,0.625,0.003
+	c5.296,0.04,10.448,0.234,15.759,0.257l1.048,0.017c0.663,1.688,2.247,2.8,4.008,2.927c2.234,0.16,4.035-1.04,4.793-2.783
+	l0.723,0.012c0.863-0.373,3.758-0.111,3.964-1.217C61.99,15.694,62.108,15.304,61.782,14.963z M6.494,7.369
+	C6.442,7.427,4.069,9.396,3.478,9.601C2.886,9.805,2.176,9.747,2.176,9.747s0.016-2.407,0.902-3.224c0,0,2.277,0.087,2.81,0.234
+	c0.532,0.145,0.625,0.337,0.65,0.394C6.565,7.207,6.545,7.311,6.494,7.369z M25.284,5.949H13.377c0,0,2.165-2.977,4.584-3.86
+	c2.258-0.824,7.322-0.795,7.322-0.795V5.949z M38.171,5.949H26.848V1.293c0,0,4.043-0.484,7.375,1.083s4.931,2.851,5.23,3.572
+	H38.171z M56.472,8.872c2.061-0.337,3.673,0.516,3.876,2.433C58.918,10.565,57.839,9.695,56.472,8.872z"></path>
+</svg>
+
+                                            <p>Элит</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row dd-block margin-reset" id="korova">
+                                <div class="col-xs-12 col-sm-4">
+
+                                    <div class="dr-down">
+                                        <input th:field="*{additionalServices}" style="z-index:4;" type="text" class="dr-down-head" id="service-selector" placeholder="Дополнительные услуги" readonly="" value="">
+
+                                        <div style="z-index:3;" class="dr-down-list" id="service-list">
+                                            <div class="dd-item" service_value="Unknown">Нет</div>
+                                            <div class="dd-item" service_value="Airport">Аэропорт-Минск /  Минск-Аэропорт</div>
+                                            <div class="dd-item" service_value="SoberDriver">Трезвый водитель</div>
+                                            <div class="dd-item" service_value="DeliveryProducts">Доставка продуктов</div>
+                                            <div class="dd-item" service_value="DeliveryFuel">Доставка топлива</div>
+                                            <div class="dd-item" service_value="DeliveryFlower">Доставка цветов</div>
+                                            <div class="dd-item" service_value="StartCar">"Прикурить" автомобиль</div>
+                                            <div class="dd-item" service_value="ChildSeat">Детское кресло</div>
+                                            <div class="dd-item" service_value="LowRise">Низкая посадка</div>
+                                            <div class="dd-item" service_value="TransportationLargeAnimals">Перевозка животных</div>
+                                            <div class="dd-item" service_value="Towing">Буксировка</div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-xs-12 col-sm-4">
+                                    <div class="dr-down">
+                                        <input th:field="*{cash}" style="z-index:2;" type="text" class="dr-down-head" id="pay-selector" placeholder="Способы оплаты" readonly="" value="Наличные">
+                                        <div style="z-index:1;" class="dr-down-list" id="pay-list">
+
+                                            <div class="dd-item" value="Наличные" method_value="Cash">Наличные</div>
+
+                                            <div class="dd-item" value="Кредитная карта (VISA)" method_value="CreditCard_VISA">Кредитная карта (VISA)</div>
+                                            <div class="dd-item" value="Кредитная карта (MasterCard)" method_value="CreditCard_MasterCard">Кредитная карта (MasterCard)</div>
+                                            <div class="dd-item" value="Кредитная карта (Maestro)" method_value="CreditCard_Maestro">Кредитная карта (Maestro)</div>
+                                            <div class="dd-item" value="Кредитная карта (БЕЛКАРТ)" method_value="CreditCard_BelCard">Кредитная карта (БЕЛКАРТ)</div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-4">
+                                    <button id="search_car" type="submit" class="btn btn-block btn-yellow upper_case">Найти машину</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                          </form>
+                    </div>
+                </div>
+            </div>
+                <script>
+                    //jQuery(function ($) {
+
+                    //    $(".desktop #Phone").mask("+375-99-999-99-99");
+
+                    //});
+                    var orderCaptcha = function (data) {
+                        $('#OrderCaptchaValue').val(data);
+                        $("#search_car").prop("disabled", false)
+                    }
+
+                    function resetBodyType() {
+                        $(".carType_icon").removeClass('icon-selected');
+                        $("#isElit").val(false);
+                        $("#isMinivan").val(false);
+                        $("#isUniversal").val(false);}
+
+                    function GetAddressByCoordinates() {
+                        if (0) {
+                            navigator.geolocation.getCurrentPosition(function (position) {
+                                var obj = new Object();
+                                obj.Latitude = position.coords.latitude;
+                                obj.Longitude = position.coords.longitude;
+                                var json = $.toJSON(obj);
+
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '/Home/GetAddressByCoordinates',
+                                    data: json,
+                                    contentType: 'application/json; charset=utf-8',
+                                    success: function (result) {
+                                        if (result != null) {
+                                            if (result.Street != null && result.Street.length > 0) {
+                                                var StreetVal = $('#street').val()
+                                                if (StreetVal.length == 0) {
+                                                    $('#street').val(result.Street);
+                                                }
+                                            }
+                                            if (Block.Street != null && result.Block.length > 0) {
+                                                var BlockVal = $('#Block').val()
+                                                if (BlockVal.length == 0) {
+                                                    $('#Block').val(result.Block);
+                                                }
+                                            }
+                                            if (Block.Building != null && result.Building.length > 0) {
+                                                var BuildingVal = $('#Building').val()
+                                                if (BuildingVal.length == 0) {
+                                                    $('#Building').val(result.Building);
+                                                }
+                                            }
+                                        }
+
+                                    }
+                                });
+                            })
+                        }
+                    }
+
+
+                    $('#CountryPhoneCode').focusout(function () {
+                        var countryCode = $('#CountryPhoneCode').val();
+                        if (countryCode != "375") {
+
+                            $("#phone-container").removeClass("BY-phone-format");
+                            $('#OperatorPhoneCode').val("");
+                            $('#OrderCaptchaContainer').addClass('show-inline-block')
+                            if ($('#OrderCaptchaValue').val() == '') {
+                                $("#search_car").prop("disabled", true)
+                            }
+
+                        }
+                        else {
+                            $("#phone-container").addClass("BY-phone-format");
+                            $('#OperatorPhoneCode').focus();
+                            $('#OrderCaptchaContainer').removeClass('show-inline-block')
+                            $("#search_car").prop("disabled", false)
+                            $('#Phone').val("");
+                        }
+                    })
+
+                    $('#OperatorPhoneCode').focusout(function () {
+                        var operatorCode = $('#OperatorPhoneCode').val();
+                        if (operatorCode == "17")
+                        {
+                            $('#OrderCaptchaContainer').addClass('show-inline-block')
+
+                            if ($('#OrderCaptchaValue').val() == '') {
+                                $("#search_car").prop("disabled", true)
+                            }
+                        }
+                    })
+
+                    $("#LastOrderContainer h3, #LastOrderContainer div, #LastOrderContainer br + svg").click(function () {
+                        $("#LastOrderContainer").val();
+                        var street = $("#last_street").val();
+                        $("#street").val(street);
+                        var Building = $("#last_Building").val();
+                        $("#Building").val(Building);
+                        var Block = $("#last_Block").val();
+                        $("#Block").val(Block);
+                        var Apartment = $("#last_Apartment").val();
+                        $("#Apartment").val(Apartment);
+                        var Entrance = $("#last_Entrance").val();
+                        $("#Entrance").val(Entrance);
+                        $("#LastOrderContainer").removeClass("show-inline-block")
+
+                    })
+                    $("#hide-last-order").click(function () {
+                        $("#LastOrderContainer").removeClass("show-inline-block")
+                    })
+
+                    $(document).ready(function () {
+                        var currCert = $("#Certificate").val();
+                        if (currCert == '') {
+                            CheckSertificate()
+                            GetAddressByCoordinates();
+                            var Cert = GetSertifcateCookieByName("Taxi152")
+                            $("#Certificate").val(Cert);
+                        }
+
+                        var countryCode = $('#CountryPhoneCode').val();
+                        var operatorPhoneCode = $('#OperatorPhoneCode').val();
+
+                        if (countryCode != "375" || (countryCode == "375" && operatorPhoneCode == "17")) {
+                            $("#search_car").prop("disabled", true)
+                            $('#OrderCaptchaContainer').addClass('show-inline-block')
+                            $("#phone-container").removeClass("BY-phone-format");
+                            if (countryCode == "375" && operatorPhoneCode == "17") {
+                                $("#phone-container").addClass("BY-phone-format");
+                            }
+                        }
+                        else {
+
+                            $("#phone-container").addClass("BY-phone-format");
+
+                        }
+
+                        //$(function () {
+                        //    var countryCodes = ["93", "355", "21", "684", "376", "244", "1264", "1268", "54", "374", "297", "247", "61", "672", "43", "994", "351", "1242", "973",
+                        //        "880", "1246", "375", "32", "501", "229", "1441", "975", "591", "387", "267", "55", "1284", "673", "359", "226", "257", "7", "855", "237", "238", "1345", "236",
+                        //        "235", "56", "86", "672", "57", "1670", "269", "242", "243", "682", "506", "385", "53", "357", "420", "45", "246", "253", "1767", "1809", "62", "593", "20", "503",
+                        //        "240", "291", "372", "251", "298", "500", "679", "358", "33", "590", "594", "689", "241", "220", "995", "49", "233", "350", "30", "299", "1473", "671", "502", "224",
+                        //        "245", "592", "509", "504", "852", "36", "354", "91", "62", "98", "964", "353", "972", "39", "225", "1876", "81", "962", "254", "686", "850", "82", "965", "996", "856",
+                        //        "371", "961", "266", "231", "21", "41", "370", "352", "853", "389", "261", "265", "60", "960", "223", "356", "692", "596", "222", "230", "52", "691", "377", "976", "1664",
+                        //        "373", "212", "258", "95", "264", "674", "977", "31", "599", "687", "64", "505", "227", "234", "683", "672", "670", "47", "968", "92", "680", "507", "675", "595", "51",
+                        //        "63", "48", "351", "1787", "974", "378", "262", "40", "7", "250", "247", "508", "39", "239", "966", "221", "248", "232", "65", "421", "386", "677", "252", "27", "34",
+                        //        "94", "1869", "1758", "1784", "249", "597", "47", "268", "46", "41", "963", "886", "992", "255", "66", "228", "690", "676", "1868", "21", "90", "993", "1649", "688",
+                        //        "256", "380", "971", "44", "598", "1340", "1", "998", "678", "39", "58", "84", "681", "21", "685", "967", "969", "381", "243", "260", "259", "263"];
+                        //    countryCodes.sort();
+                        //    $("#CountryPhoneCode").autocomplete({
+                        //        source: countryCodes,
+                        //        appendTo: "#CodesVariants",
+                        //    });
+                        //});
+                        function sIncrease(i, ii) {
+                            if (i > ii)
+                                return 1;
+                            else if (i < ii)
+                                return -1;
+                            else
+                                return 0;
+                        }
+
+
+                        $('#OperatorPhoneCode').keypress(function (key) {
+                            var code = $('#CountryPhoneCode').val()
+                            if (code == "375") {
+                                var numLength = $('#OperatorPhoneCode').val().length
+                                if (numLength == 0) {
+
+                                    if (key.charCode < 48 || key.charCode == 50 || key.charCode == 51 || key.charCode == 52
+                                        || key.charCode == 98 || key.charCode == 99 || key.charCode == 100 || key.charCode == 49) {
+                                        return true;
+                                    }
+                                    else {
+                                        return false;
+                                    }
+                                }
+                                if (numLength == 1) {
+                                    var num = $('#OperatorPhoneCode').val()
+                                    switch (num) {
+                                        case "1":
+                                            if (key.charCode < 48 || key.charCode == 55) {
+                                                $('#Phone').focus();
+                                                return true;
+                                            }
+                                            else {
+                                                return false;
+                                            }
+                                            break;
+                                        case "2":
+                                            if (key.charCode < 48 || key.charCode == 57 || key.charCode == 53 || key.charCode == 105 || key.charCode == 101) {
+                                                $('#Phone').focus();
+                                                return true;
+                                            }
+                                            else {
+                                                $('#Phone').focus();
+                                                return true;
+                                            }
+                                            break;
+                                        case "3":
+                                            if (key.charCode < 48 || key.charCode == 51 || key.charCode == 99) {
+                                                $('#Phone').focus();
+                                                return true;
+                                            }
+                                            else {
+                                                return false;
+                                            }
+                                            break;
+                                        case "4":
+                                            if (key.charCode < 48 || key.charCode == 52 || key.charCode == 100) {
+                                                $('#Phone').focus();
+                                                return true;
+                                            }
+                                            else {
+                                                return false;
+                                            }
+                                            break;
+                                        default:
+                                            return false;
+                                    }
+                                }
+                                if (numLength == 2) {
+                                    //if ((key.charCode >= 48 && key.charCode <= 56) || (key.charCode >= 96 && key.charCode <= 105)) {
+                                    //    $('#Phone').focus();
+                                    //    var char = String.fromCharCode(key.keyCode);
+                                    //    $('#Phone').val(char);
+                                    //}
+                                    if (key.charCode < 48) {
+                                        return true;
+                                    }
+                                    return false;
+                                }
+                            }
+                            return true;
+                        });
+
+                        $('#Phone').keypress(function (key) {
+                            var code = $('#CountryPhoneCode').val()
+                            if (code == "375") {
+                                if ((key.charCode >= 48 && key.charCode <= 56) || (key.charCode >= 96 && key.charCode <= 105)) {
+                                    var numLength = $('#Phone').val().length
+                                    if (numLength == 7) {
+
+                                        return false;
+                                    }
+                                }
+                                return true;
+                            }
+                        });
+                        //$("#street").keyup(function (event) {
+
+                        //    var term = $(this).val();
+                        //        if (term.length == 0) {
+                        //        } else {
+                        //                $.getJSON('/Home/GetStreets?term=' + term, null, function (data) {
+                        //                    $("#street").autocomplete("option", "source", data);
+                        //                });
+                        //        }
+                        //});
+                        //$("#street").autocomplete({
+                        //    source: StreetVariants,
+                        //    appendTo: "#street-variants",
+                        //    delay: 1500
+
+                        //});
+                        $("#street").autocomplete({
+                            source: function( request, response ) {
+                                $.ajax({
+                                    url: "/Home/GetStreets?term=" + request.term,
+                                    dataType: "json",
+                                    success: function( data ) {
+                                        response( data );
+                                    }
+                                });
+                            },
+                            appendTo: "#street-variants",
+                            delay: 500
+                        });
+
+
+                        $('.only-numbers').keypress(function (key) {
+                            if (key.charCode == 0) {
+                                return true;
+                            }
+                            if (key.charCode < 48 || key.charCode > 57) return false;
+                        });
+
+                        $(".carType_icon").click(function () {
+                            var body = $(this).attr('body_type');
+                            resetBodyType();
+                            switch (body) {
+                                case "2":
+                                    $("#isUniversal").val("true");
+                                    break;
+                                case "3":
+                                    $("#isMinivan").val("true");
+                                    break;
+                                case "4":
+                                    $("#isElit").val("true");
+                                    break;
+                                default:
+                                    break;
+                            }
+                            $(this).addClass('icon-selected');
+                        });
+
+
+                        $("#service-selector").click(function () {
+                            $(this).parent().toggleClass('dr-focus');
+                        });
+                        $("#service-selector").focusout(function () {
+                            setTimeout(function () {
+                                $('#service-selector').parent().removeClass('dr-focus');
+                            }, 300);
+                        });
+                        $('#service-list .dd-item').click(function () {
+                            var value = $(this).text();
+                            var service = $(this).attr('service_value');
+                            $(this).parent().prev("#service-selector").val(value);
+                            $('#Service').val(service);
+                        });
+
+
+                        $("#pay-selector").click(function () {
+                            $(this).parent().toggleClass('dr-focus');
+                        });
+                        $("#pay-selector").focusout(function () {
+                            setTimeout(function () {
+                                $('#pay-selector').parent().removeClass('dr-focus');
+                            }, 300);
+                        });
+                        $('#pay-list .dd-item').click(function () {
+                            var value = $(this).text();
+                            var method = $(this).attr('method_value');
+                            $(this).parent().prev("#pay-selector").val(value);
+                            $('#PaymentMethod').val(method);
+                        });
+                    });
+                    $('#street-variants li').click(function () {
+                        alert('ffg');
+                        //$(this).trigger('click');
+                    })
+
+                </script></div>
+        </div>
+
+
+
+        <!--gavno-->
+        <div id="offer">
+            <div class="container">
+                <div class="col-12 center p-0">
+
+                    <div class="smart-header">
+                        <h2>
+                            Наши бонусы
+                        </h2>
+                        <p>
+                            Такси 322 - мы подберем комфортный автомобиль на любой бюджет, от эконом до класса люкс.
+                        </p>
+                    </div>
+
+                    <div class="row mt-40 advantage">
+                        <div class="col-md-4 col-6 flex-column">
+                            <div class="text-center p-15-0 width-unset">
+                                <img src="/static/icons/lock.png" title="lock">
+                            </div>
+                            <div class="mb-1 mt-2">
+                                <h4 class="text-uppercase text-center m-0 m-sbold"><br>Безопасность</h4>
+                            </div>
+                            <div class="top-border2 col-md-10 center"></div>
+                            <div class="mt-1">
+                                <p class="text-center r-regular"><br>Каждый водитель профессионал своего дела, ваша безопасность- наш приоритет.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-6 flex-column">
+                            <div class="text-center p-15-0">
+                                <img src="/static/icons/card.png" title="card">
+                            </div>
+                            <div class="mb-1 mt-2">
+                                <h4 class="text-uppercase text-center m-0 m-sbold"><br>без предоплаты</h4>
+                            </div>
+                            <div class="top-border2 col-md-10 center"></div>
+                            <div class="mt-1">
+                                <p class="text-center r-regular"><br>Все поездки Вы можете забронировать без предварительной оплаты</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-6 flex-column">
+                            <div class="text-center p-15-0">
+                                <img src="/static/icons/car2.png" title="car">
+                            </div>
+                            <div class="mb-1 mt-2">
+                                <h4 class="text-uppercase text-center m-0 m-sbold"><br>комфорт</h4>
+                            </div>
+                            <div class="top-border2 col-md-10 center"></div>
+                            <div class="mt-1">
+                                <p class="text-center r-regular"><br>Что может быть лучше прохладительных напитков и кондиционера в знойную жару, а также WI-FI всегда к вашим услугам - все это мы предоставляем, чтобы Вы наслаждались комфортной поездкой<br><br></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-6 flex-column">
+                            <div class="text-center p-15-0">
+                                <img src="/static/icons/languages.png" title="fine">
+                            </div>
+                            <div class="mb-1 mt-2">
+                                <h4 class="text-uppercase text-center m-0 m-sbold"><br>без штрафов</h4>
+                            </div>
+                            <div class="top-border2 col-md-10 center"></div>
+                            <div class="mt-1">
+                                <p class="text-center r-regular"><br>Бесплатное время ожидания в аэропортах 60 минут, во всех других местах 15 минут. Вы можете легко отменить поездку ,сообщив об этом оператору в день поездки<br><br></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-6 flex-column">
+                            <div class="text-center p-15-0">
+                                <img src="/static/icons/payment.png" title="payment">
+                            </div>
+                            <div class="mb-1 mt-2">
+                                <h4 class="text-uppercase text-center m-0 m-sbold"><br>удобный платеж</h4>
+                            </div>
+                            <div class="top-border2 col-md-10 center"></div>
+                            <div class="mt-1">
+                                <p class="text-center r-regular"><br>Мы предоставляем любой способ оплаты, Вы можете оплатить поездку заранее или в конце</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-6 flex-column">
+                            <div class="text-center p-15-0">
+                                <img src="/static/icons/coins.png" title="price">
+                            </div>
+                            <div class="mb-1 mt-2">
+                                <h4 class="text-uppercase text-center m-0 m-sbold"><br>лучшие цены</h4>
+                            </div>
+                            <div class="top-border2 col-md-10 center"></div>
+                            <div class="mt-1">
+                                <p class="text-center r-regular"><br>Фиксированные тарифы на трансферы между городами и аэропортами</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="smart-taxi-container-seporator"></div>
+        <div class="promo-action-section">
+            <div > </div>
+
+        </div>
+
+        <div id="price-container">
+            <div class="smart-header">
+                <h2>
+                    Тарифы
+                </h2>
+                <p>
+                    Такси 322 -  недорогое такси с исключительно профессиональными водителями. Умеренные цены и дисциплина позволяют нам удерживать лидирующие позиции по таксомоторным перевозкам в Минске.
+                </p>
+            </div>
+
+            <div id="tarif-cards-block">
+
+                <div class="card stdrt">
+                    <div class="card-header">
+                        <h4>
+                            Стандарт
+                        </h4>
+                        <p>
+                        <span>
+                             55 коп
+                        </span>
+                        </p>
+                        <p>
+                            Цена за 1 км
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="InSityBlock">
+                            <span>По городу</span>
+
+                            <p>
+                                <span>Цена за 1 км</span><span> 55 коп</span>
+                            </p><div style="clear:both;"></div>
+                            <p>
+                                <span>Подача</span><span>бесплатно</span>
+                            </p><div style="clear:both;"></div>
+                            <p>
+                                <span>Минимальная поездка / абонирование</span><span>4 руб</span>
+                            </p>
+                            <div style="clear:both;"></div>
+                            <p>(Посадка: 2 руб 90 коп + 2 км)</p>
+                            <div style="clear:both;"></div>
+                            <p>
+                                <span>Простой (1 час)</span><span>5 руб 50 коп</span>
+                            </p><div style="clear:both;"></div>
+                        </div>
+
+                        <div class="OutSityBlock">
+                            <span>За городом</span>
+
+                            <p>
+                                <span>Цена за 1 км *</span><span> 85 коп</span>
+                            </p><div style="clear:both;"></div>
+                            <p>
+                                <span>Подача</span><span>бесплатно</span>
+                            </p><div style="clear:both;"></div>
+
+                            <p>
+                                <span>Простой (1 час)</span><span>8 руб 50 коп</span>
+                            </p><div style="clear:both;"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#order-container"><button class="btn btn-block" onclick="SetStandartOrder()">Заказать</button></a>
+
+                    </div>
+                </div>
+
+                <div class="card unvsl">
+                    <div class="card-header">
+                        <h4>
+                            Универсал
+                        </h4>
+                        <p>
+                        <span>
+                             55 коп
+                        </span>
+                        </p>
+                        <p>
+                            Цена за 1 км
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="InSityBlock">
+                            <span>По городу</span>
+                            <p>
+                                <span>Цена за 1 км</span><span> 55 коп</span>
+                            </p><div style="clear:both;"></div>
+                            <p>
+                                <span>Подача</span><span>4 руб</span>
+                            </p><div style="clear:both;"></div>
+                            <p>
+                                <span>Минимальная поездка / абонирование</span><span>4 руб</span>
+                            </p>
+                            <div style="clear:both;"></div>
+                            <p>(Посадка: 2 руб 90 коп + 2 км)</p>
+                            <div style="clear:both;"></div>
+                            <p>
+                                <span>Простой (1 час)</span><span>5 руб 50 коп</span>
+                            </p><div style="clear:both;"></div>
+                        </div>
+
+                        <div class="OutSityBlock">
+                            <span>За городом</span>
+                            <p>
+                                <span>Цена за 1 км *</span><span> 85 коп</span>
+                            </p><div style="clear:both;"></div>
+                            <p>
+                                <span>Подача</span><span>6 руб 50 коп</span>
+                            </p><div style="clear:both;"></div>
+
+                            <p>
+                                <span>Простой (1 час)</span><span>8 руб 50 коп</span>
+                            </p><div style="clear:both;"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#order-container"><button class="btn btn-block" onclick="SetUniversalOrder()">Заказать</button></a>
+                    </div>
+
+                </div>
+
+                <div class="card mnv">
+                    <div class="card-header">
+                        <h4>
+                            Минивэн
+                        </h4>
+                        <p>
+                        <span>
+                             55 коп
+                        </span>
+                        </p>
+                        <p>
+                            Цена за 1 км
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="InSityBlock">
+                            <span>По городу</span>
+                            <p>
+                                <span>Цена за 1 км</span><span> 55 коп</span>
+                            </p><div style="clear:both;"></div>
+                            <p>
+                                <span>Подача</span><span>4 руб</span>
+                            </p><div style="clear:both;"></div>
+                            <p>
+                                <span>Минимальная поездка / абонирование</span><span>4 руб</span>
+                            </p>
+                            <div style="clear:both;"></div>
+                            <p>(Посадка: 2 руб 90 коп + 2 км)</p>
+                            <div style="clear:both;"></div>
+                            <p>
+                                <span>Простой (1 час)</span><span>5 руб 50 коп</span>
+                            </p><div style="clear:both;"></div>
+                        </div>
+
+                        <div class="OutSityBlock">
+                            <span>За городом</span>
+                            <p>
+                                <span>Цена за 1 км *</span><span> 85 коп</span>
+                            </p><div style="clear:both;"></div>
+                            <p>
+                                <span>Подача</span><span>6 руб 50 коп</span>
+                            </p><div style="clear:both;"></div>
+
+                            <p>
+                                <span>Простой (1 час)</span><span>8 руб 50 коп</span>
+                            </p><div style="clear:both;"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#order-container"><button class="btn btn-block" onclick="SetMinivanOrder()">Заказать</button></a>
+                    </div>
+
+                </div>
+
+                <div class="card elit">
+                    <div class="card-header">
+                        <h4>
+                            Элит
+                        </h4>
+                        <p>
+                        <span>
+                             85 коп
+                        </span>
+                        </p>
+                        <p>
+                            Цена за 1 км
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="InSityBlock">
+                            <span>По городу</span>
+                            <p>
+                                <span>Цена за 1 км</span><span> 85 коп</span>
+                            </p><div style="clear:both;"></div>
+                            <p>
+                                <span>Подача</span><span>бесплатно</span>
+                            </p><div style="clear:both;"></div>
+                            <p>
+                                <span>Минимальная поездка / абонирование</span><span>4 руб</span>
+                            </p>
+                            <div style="clear:both;"></div>
+                            <p>(Посадка: 3 руб 15 коп + 1 км)</p>
+                            <div style="clear:both;"></div>
+                            <p>
+                                <span>Простой (1 час)</span><span>8 руб 50 коп</span>
+                            </p><div style="clear:both;"></div>
+                        </div>
+
+                        <div class="OutSityBlock">
+                            <span>За городом</span>
+                            <p>
+                                <span>Цена за 1 км *</span><span>1 руб 5 коп</span>
+                            </p><div style="clear:both;"></div>
+                            <p>
+                                <span>Подача</span><span>бесплатно</span>
+                            </p><div style="clear:both;"></div>
+
+                            <p>
+                                <span>Простой (1 час)</span><span>10 руб 50 коп</span>
+                            </p><div style="clear:both;"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#order-container"><button class="btn btn-block" onclick="SetElitOrder()">Заказать</button></a>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div id="add-service-block">
+                <div class="add-service-row row">
+                    <div class="img-service col-sm-2 hide-to-768">
+                        <img src="/static/icons/airplane.png" />
+                    </div>
+                    <div class="service-description col-xs-12 col-sm-7">
+                        <h4>Аэропорт-Минск /  Минск-Аэропорт</h4>
+                        <p>Действует при поездке по кратчайшему маршруту Минск-Аэропорт, Аэропорт-Минск. Необходимо сообщить диспетчеру о поездке в/из Аэропорта Минск-2 или написать в примечаниях при заказе онлайн или через мобильное приложение.  Минивен и универсал - 40 руб </p>
+                    </div>
+                    <div class="serv-price col-xs-12 col-sm-offset-0 col-sm-3">
+                        <p>35 руб</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="add-service-row row">
+                    <div class="img-service col-sm-2 hide-to-768">
+                        <img src="/static/icons/airplane.png" />
+                    </div>
+                    <div class="service-description col-xs-12 col-sm-7">
+                        <h4>Минск-Аэропорт-Минск</h4>
+                        <p>Действует при поездке по кратчайшему маршруту Минск-Аэропорт-Минск. Необходимо сообщить диспетчеру о поездке в Аэропорт Минск-2 и обатно или написать в примечаниях при заказе онлайн или через мобильное приложение.  Минивен и универсал - 70 руб</p>
+                    </div>
+                    <div class="serv-price col-xs-12 col-sm-offset-0 col-sm-3">
+                        <p>60 руб</p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="add-service-row row">
+                    <div class="img-service col-sm-2 hide-to-768">
+                        <img src="/static/icons/delivery.png" />
+                    </div>
+                    <div class="service-description col-xs-12 col-sm-7">
+                        <h4>Доставка</h4>
+                        <p>продуктов питания, товаров первой необходимости и топлива</p>
+                    </div>
+                    <div class="serv-price col-xs-12 col-sm-offset-0 col-sm-3">
+                        <p>11 руб 50 коп</p>
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="add-service-row row">
+                    <div class="img-service col-xs-2 hide-to-768">
+                        <img src="/static/icons/smoke.png" />
+                    </div>
+                    <div class="service-description col-xs-12 col-sm-7">
+                        <h4>&quot;Прикурить&quot; автомобиль</h4>
+                        <p>запуск двигателя от внешнего источника питания</p>
+                    </div>
+                    <div class="serv-price col-xs-12 col-sm-offset-0 col-sm-3">
+                        <p>12 руб 50 коп</p>
+                        <p></p>
+                    </div>
+                </div>
+
+
+                <div class="add-service-row row">
+                    <div class="img-service col-xs-2 hide-to-768">
+                        <img src="/static/icons/towing.png" />
+                    </div>
+                    <div class="service-description col-xs-12 col-sm-7">
+                        <h4>Буксировка</h4>
+                        <p>Буксировка по городу минску (дополнительно оплачивается каждый 1 км пути по тарифу СТАНДАРТ)</p>
+                    </div>
+                    <div class="serv-price col-xs-12 col-sm-offset-0 col-sm-3">
+                        <p>12 руб 50 коп</p>
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="add-service-row row">
+                    <div class="img-service col-xs-2 hide-to-768">
+                        <img src="/static/icons/wedding.png" />
+                    </div>
+                    <div class="service-description col-xs-12 col-sm-7">
+                        <h4>Свадьбы</h4>
+                        <p>заказ такси для свадеб (стоимость за 1 час по городу, заказ минимум 2 часа)</p>
+                    </div>
+                    <div class="serv-price col-xs-12 col-sm-offset-0 col-sm-3">
+                        <p>30 руб</p>
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="add-service-row row">
+                    <div class="img-service col-xs-2 hide-to-768">
+                        <img src="/static/icons/sober_driver.png" />
+                    </div>
+                    <div class="service-description col-xs-12 col-sm-7">
+                        <h4>Трезвый водитель</h4>
+                        <p>Доставка нетрезвого клиента на его автомобиле по г. Минску (дополнительно оплачивается стоимость такси на  обратную дорогу, т.е. до таксомотора водителя)</p>
+                    </div>
+                    <div class="serv-price col-xs-12 col-sm-offset-0 col-sm-3">
+                        <p>19 руб</p>
+                        <p></p>
+                    </div>
+                </div>
+
+            </div>
+            <p>* Загородный тариф действует от знака МИНСК </p>
+        </div>
+
+        <div id="driver-container">
+
+            <div id="driver-header">
+                <h2>Водителям</h2>
+                <p>Если вы хотите хорошо зарабатывать, то Такси 322 идеальный выбор для вас!</p>
+            </div>
+            <div id="driver-body">
+                <div id="driver-description">
+
+                    <h3>Отправьте заявку</h3>
+
+                    <p><br>И наши специалисты свяжутся с вами в течении одного рабочего дня</p>
+
+                    <p>Обязательно ознакомьтесь с условиями для сотрудничества со службой &quot;Такси 322&quot;</p>
+
+
+
+
+                    <p>По вопросам сорудничества обращаться по телефонам:</p>
+                    <p class="phone-numb">+375(17)1-223-322(Город) </p>
+                    <p class="phone-numb">+375(29)1-613-322(MTC)</p>
+                    <p class="phone-numb">+375(44)1-518-322(Velcom)</p>
+                </div>
+                <div id="driver-form">
+
+
+                    <form action = "#" method="post" th:action="@{/driverPost}" th:object="${driversEntity}">
+                        <div class="row" style="margin-top:20px;">
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input th:field="*{name}" class="form-control" data-val="true" data-val-required="Обязательно для заполнения" id="DriverName" name="DriverName" placeholder="Имя*" type="text" value="" />
+                            </div>
+
+                            <div class="col-xs-6" style="padding-right:0;">
+                                <input th:field="*{phone}" class="form-control" data-val="true" data-val-required="Обязательно для заполнения" id="DriverPhone" name="DriverPhone" placeholder="Tелефон*" type="text" value="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6" style="padding-left:0;">
+                                <input th:field="*{experience}" class="form-control" data-val="true" data-val-required="Обязательно для заполнения" id="DriverYear" name="DriverYear" placeholder="Водительский стаж*" type="text" value="" />
+                            </div>
+                            <div class="col-xs-6" style="padding-right:0;">
+                                <input th:field="*{haveCar}" class="form-control" data-val="true" data-val-required="Обязательно для заполнения" id="DriverAuto" name="DriverAuto" placeholder="Есть ли автомобиль*" type="text" value="" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12" style="padding-left:0; padding-right:0;">
+<textarea class="form-control" cols="20" data-val="true" id="DriverMessage" name="DriverMessage" placeholder="Tекст сообщения*" rows="2">
+</textarea>
+
+
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button class="btn btn-block btn-yellow" type="submit">Отправить заявку</button>
+                            <div class="msg-sent">Сообщение отправлено</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $( window ).resize(function() {
+            resizeWidthCards();
+            resizeHeightCards();
+        });
+        function resizeWidthCards()
+        {
+            var maxWidth = 0;
+            $('.card').each(function(){
+                var cardWidth = $(this).width();
+                if (maxWidth < cardWidth) {
+                    maxWidth = cardWidth;
+                }
+            })
+            $('.card').width(maxWidth);
+        }
+        function resizeHeightCards()
+        {
+            var maxHeight = 0;
+            $('.card-header').each(function(){
+                var cardHeight = $(this).height();
+                if (maxHeight < cardHeight) {
+                    maxHeight = cardHeight;
+                }
+            })
+            $('.card-header').height(maxHeight);
+
+            maxHeight = 0;
+            $('.InSityBlock').each(function(){
+                var cardHeight = $(this).height();
+                if (maxHeight < cardHeight) {
+                    maxHeight = cardHeight;
+                }
+            })
+            $('.InSityBlock').height(maxHeight);
+            maxHeight = 0;
+            $('.OutSityBlock').each(function(){
+                var cardHeight = $(this).height();
+                if (maxHeight < cardHeight) {
+                    maxHeight = cardHeight;
+                }
+            })
+            $('.OutSityBlock').height(maxHeight);
+        }
+
+
+
+        function redirectIOS()
+        {
+            window.open("/Mobile/IOS","_blank")
+        }
+        function redirectAndroid()
+        {
+            window.open("/Mobile/Android","_blank")
+        }
+        function redirectWP()
+        {
+            window.open("/Mobile/WP","_blank")
+        }
+
+        $('a.promo.promo-ios').click(function(event)
+        {
+            if (event.target.className == "phone-info-close") {
+                $(".promo").hide();
+            }
+            else {
+                window.open("/Mobile/IOS_Baner","_blank")
+            }
+
+        })
+        $('a.promo.promo-android').click(function(event)
+        {
+            if (event.target.className == "phone-info-close") {
+                $(".promo").hide();
+            }
+            else {
+                window.open("/Mobile/Android_Baner","_blank")
+            }
+
+        })
+        $('a.promo.promo-windows').click(function(event)
+        {
+            if (event.target.className == "phone-info-close") {
+                $(".promo").hide();
+            }
+            else {
+                window.open("/Mobile/WP_Baner","_blank")
+            }
+        })
+        var StreetVariants = [];
+        var orderIsCanceled;
+        var orderIsConfirmed;
+
+
+
+        function SetStandartOrder() {
+            $(".carType_icon").removeClass('icon-selected');
+            resetBodyType();
+            $("#lbl-standart").addClass('icon-selected');
+        }
+        function SetUniversalOrder() {
+            $(".carType_icon").removeClass('icon-selected');
+            resetBodyType();
+            $("#isUniversal").val("true");
+            $("#lbl-universal").addClass('icon-selected');
+        }
+        function SetMinivanOrder() {
+            $(".carType_icon").removeClass('icon-selected');
+            resetBodyType();
+            $("#isMinivan").val("true");
+            $("#lbl-minivan").addClass('icon-selected');
+        }
+        function SetElitOrder() {
+            $(".carType_icon").removeClass('icon-selected');
+            resetBodyType();
+            $("#isElit").val("true");
+            $("#lbl-comfort").addClass('icon-selected');
+        }
+
+
+        function submitClientMessage() {
+
+            var form = $("#client-form").find('form');
+            $.ajax({
+                type: "POST",
+                url: '/Home/SubmitClientForm',
+                data: form.serialize(),
+                cache: false,
+                async: false,
+                success: function (result) {
+                    if (result.indexOf("field-validation-error") > -1) {
+                        $("#client-form").html(result);
+                    } else {
+                        $("#client-form").html(result);
+                        $('#client-form input[type="text"],#client-form input[type="tel"], #client-form textarea').val('');
+                        $('#client-form .msg-sent').addClass('show-block');
+                        setTimeout(function () {
+                            $('#client-form .msg-sent').removeClass('show-block');
+                        }, 15000);
+
+                    }
+                    onloadCallback
+                }
+            });
+
+            //event.preventDefault();
+        }
+
+
+        //            }
+        //        }
+        //    });
+        //    event.preventDefault();
+        //}
+
+        function submitDriverMessage(event) {
+            var form = $("#driver-form").find('form');
+            $.ajax({
+                type: "POST",
+                url: '/Home/SubmitDriverForm',
+                data: form.serialize(),
+                cache: false,
+                async: false,
+                success: function (result) {
+                    if (result.indexOf("input-validation-error") > -1) {
+                        $("#driver-form").html(result);
+                    } else {
+                        $("#driver-form").html(result);
+                        $('#driver-form input[type="text"],#driver-form input[type="tel"], #driver-form textarea').val('');
+                        $('#driver-form .msg-sent').addClass('show-block');
+                        setTimeout(function () {
+                            $('.msg-sent').removeClass('show-block');
+                        }, 15000);
+
+                    }
+                    //onloadCallback
+                }
+            });
+
+            //event.preventDefault();
+        }
+
+        function submitOrder(event) {
+            var countryCode = $('#CountryPhoneCode').val();
+            var OperatorPhoneCode = $('#OperatorPhoneCode').val()
+            var numLength = $('#OperatorPhoneCode').val().length
+            //if (countryCode != "375" ) {
+            //    $('#OrderCaptchaContainer').addClass('show-block');
+            //    $('#search_car').hide();
+
+            //    return false;
+            //}
+
+            if (countryCode == "375" && numLength < 2) {
+                $('#OperatorPhoneCode').addClass("input-validation-error")
+            }
+            else {
+                $('#OperatorPhoneCode').removeClass("input-validation-error")
+                //var certificate = GetSertifcateCookieByName("Taxi152")
+                var form = $("#order-container").find('form');
+                $.ajax({
+                    type: "POST",
+                    url: '/Home/OrderTaxi',
+                    data: form.serialize(),
+                    cache: false,
+                    async: false,
+                    success: function (result) {
+
+                        $("#order-container").html(result);
+                        if (countryCode != "375" || (countryCode == "375" && OperatorPhoneCode == "17")) {
+                            var CookieName = "Taxi152";
+                            var CookieExpires = 5;
+                            var CookiePath = "/";
+                            var CookieDomain = "taxi152.by";
+                            var CookieCertificateValue = $("#Certificate").val();
+                            setTempCookie(CookieName, CookieCertificateValue, CookieExpires, CookiePath, CookieDomain)
+                        }
+
+                        var code = $("#Code").val();
+                        if (code == 1) {
+                            checkStatus();
+                        }
+                    }
+                });
+            }
+
+
+        }
+
+
+        function ConfirmOrder(event) {
+            orderIsConfirmed = true;
+            var form = $("#order-container").find('form');
+            $.ajax({
+                type: "POST",
+                url: '/Home/ConfirmOrder',
+                data: form.serialize(),
+                cache: false,
+                async: false,
+                success: function (result) {
+                    if (result) {
+                        $('#countdown').hide();
+                        $("#result-header").find("div:first").hide();
+                        $("#result-header > *:nth-child(2)").hide();
+                        $("#car-moved-lbl").css('display', 'block');
+                        $("#btn-newOrder").addClass('show-inline');
+
+                        $("#btn-cancel-confirm").css('display', 'none');
+                        $("#btn-confirm").css('display', 'none');
+                        $("#NeedConfirmation").val(0)
+                        $("#please-confirm").css('display', 'none');
+                    }
+                    else {
+
+                    }
+                }
+            });
+            //event.preventDefault();
+        }
+        function CreateNewOrder(event)
+        {
+            $("#order-container").load('/Home/OrderTaxi');
+        }
+
+        function StartTimer() {
+            if (!orderIsConfirmed) {
+                setTimeout(function () {
+                    var time = $("#ConfirmPeriod").val();
+                    time = time - 1000;
+                    if (time < 0) {
+                        var needConfirm = $("#NeedConfirmation").val();
+                        if (needConfirm != 0) {
+                            CancelSearch();
+                        }
+
+                    }
+                    else {
+                        $("#ConfirmPeriod").val(time);
+                        $("#countdown").html(time / 1000 + " сек");
+                        StartTimer()
+                    }
+
+                }, 1000)
+            }
+
+
+        }
+        var currentStep = 1;
+        function SmartSteps(event) {
+            setTimeout(function () {
+                switch (currentStep) {
+                    case 1:
+                        currentStep = 2;
+                        $("#smart-taxi-container").removeClass("step-two-image")
+                        $("#smart-taxi-container").removeClass("step-three-image")
+                        $("#smart-taxi-container").addClass("step-one-image")
+                        $(".step").removeClass("step-select");
+                        $("#step-one").addClass("step-select");
+                        SmartSteps();
+                        break;
+                    case 2:
+                        currentStep = 3;
+                        $("#smart-taxi-container").removeClass("step-one-image")
+                        $("#smart-taxi-container").addClass("step-two-image")
+                        $("#smart-taxi-container").removeClass("step-three-image")
+                        $(".step").removeClass("step-select");
+                        $("#step-two").addClass("step-select");
+                        SmartSteps();
+                        break;
+                    case 3:
+                        currentStep = 1;
+                        $("#smart-taxi-container").removeClass("step-one-image")
+                        $("#smart-taxi-container").removeClass("step-two-image")
+                        $("#smart-taxi-container").addClass("step-three-image")
+                        $(".step").removeClass("step-select");
+                        $("#step-three").addClass("step-select");
+                        SmartSteps();
+                        break;
+                    default:
+
+                }
+            }, 4000)
+        };
+
+        function SetStep(step) {
+            switch (step) {
+                case 1:
+                    currentStep = 1;
+                    $("#smart-taxi-container").removeClass("step-two-image")
+                    $("#smart-taxi-container").removeClass("step-three-image")
+                    $("#smart-taxi-container").addClass("step-one-image")
+
+                    $(".step").removeClass("step-select");
+                    $("#step-one").addClass("step-select");
+                    break;
+                case 2:
+                    currentStep = 2;
+                    $("#smart-taxi-container").removeClass("step-one-image")
+                    $("#smart-taxi-container").addClass("step-two-image")
+                    $("#smart-taxi-container").removeClass("step-three-image")
+
+
+                    $(".step").removeClass("step-select");
+                    $("#step-two").addClass("step-select");
+                    break;
+                case 3:
+                    currentStep = 3;
+                    $("#smart-taxi-container").removeClass("step-one-image")
+                    $("#smart-taxi-container").removeClass("step-two-image")
+                    $("#smart-taxi-container").addClass("step-three-image")
+
+                    $(".step").removeClass("step-select");
+                    $("#step-three").addClass("step-select");
+                    break;
+                default:
+
+            }
+        }
+
+        function getCookie(name) {
+            var matches = document.cookie.match(new RegExp(
+                "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+            ));
+            return matches ? decodeURIComponent(matches[1]) : undefined;
+        }
+
+        function setCookie(name, value, expires, path, domain) {
+
+            if (typeof expires == "number" && expires) {
+                var d = new Date();
+                d.setDate(d.getDate() + expires);
+                expires = d;
+            }
+            if (expires && expires.toUTCString) {
+                expires = expires.toUTCString();
+            }
+            value = encodeURIComponent(value);
+            var newCookie = name + "=" + value + "; expires=" + expires + "; path=" + path + "; domain=" + domain;
+            document.cookie = newCookie;
+        }
+        function setTempCookie(name, value, expiresMinuts, path, domain) {
+            if (typeof expiresMinuts == "number" && expiresMinuts) {
+                var d = new Date();
+                d.setMinutes(d.getMinutes() + expiresMinuts);
+                expiresMinuts = d;
+            }
+            if (expiresMinuts && expiresMinuts.toUTCString) {
+                expiresMinuts = expiresMinuts.toUTCString();
+            }
+            value = encodeURIComponent(value);
+            var newCookie = name + "=" + value + "; expires=" + expiresMinuts + "; path=" + path + "; domain=" + domain;
+            document.cookie = newCookie;
+        }
+
+        function SetSertifcateCookie(certificate){
+            var CookieCertificateValue = certificate;
+            var CookieName = "Taxi152";
+            var CookieExpires = 3650;
+            var CookiePath = "/";
+            var CookieDomain = "taxi152.by";
+            setCookie(CookieName, CookieCertificateValue, CookieExpires, CookiePath, CookieDomain)
+        }
+        function GetSertifcateCookieByName(Name){
+            var Certificate = getCookie(Name)
+            return Certificate;
+        }
+
+        function CheckSertificate(){
+            var sertificateName = "Taxi152"
+            var UserCertificate = GetSertifcateCookieByName(sertificateName)
+            if (UserCertificate != undefined) {
+                $.ajax({
+                    type: "GET",
+                    url: '/Home/EnterClient?certificate='+UserCertificate,
+                    cache: false,
+                    async: false,
+                    success: function (result) {
+                        if (result != null && result.Street != undefined) {
+                            $("#LastOrderContainer").addClass("show-inline-block")
+                            $("#last_street").val(result.Street);
+                            $("#last_Building").val(result.Building);
+                            $("#last_Block").val(result.Block);
+                            $("#last_Apartment").val(result.Apartment);
+                            $("#last_Entrance").val(result.Entrance);
+                            $("#OperatorPhoneCode").val(result.OperatorPhoneCode);
+                            $("#Phone").val(result.Phone);
+                            $("#Name").val(result.Name);
+
+                            var lastAddressValue = "";
+                            if (result.Street != null && result.Street != "") {
+                                $("#last_street_lbl").text(result.Street)
+                            }
+                            if (result.Building != null && result.Building != "") {
+                                $("#last_Building_lbl").append("Д." + result.Building)
+                            }
+                            if (result.Block != null && result.Block != "") {
+                                $("#last_Building_lbl").append("/" + result.Block)
+                            }
+                            if (result.Entrance != null && result.Entrance != "") {
+                                $("#last_Building_lbl").append(" - " + result.Entrance + "Подъезд")
+                            }
+                            if (result.Apartment != null && result.Apartment != "") {
+                                $("#last_Apartment_lbl").append("Кв." + result.Apartment)
+                            }
+                            //$("#LastAddress").text(lastAddressValue)
+                        }
+                    }
+                })
+            }
+        }
+
+        $(document).ready(function () {
+
+            //skyAnimate();
+
+            var theClass = $('html').attr('class');
+
+            //$(".phone-info-close").click(function (event) {
+            //    $(".promo").hide();
+            //})
+
+            $("#order-container").load('/Home/OrderTaxi');
+
+            SmartSteps()
+
+            orderIsCanceled = false;
+
+            $(window).trigger('resize');
+        });
+
+
+    </script>
+
+    <!-- </div>
+    <div id="footer-client">
+
+        <a target="_blank" href="http://ryxol.com">Разработка сайта</a>
+    </div> -->
+</body>
+</html>

@@ -1,0 +1,358 @@
+body {
+}
+.margin-reset{
+    margin:0;
+}
+
+.carbtn {
+        margin-bottom: 30px;
+    }
+@media (max-width: 880px) {
+    #wrapper-airport-bnnr{
+        display:none !important;
+    }
+    
+
+    #wrapper-airport{
+        display:block !important;
+        height: auto !important;
+    }
+
+    .air-title{
+    display:block !important;
+    width:100% !important;
+    padding:50px 0 !important;
+}
+    .air-map-container{
+        display:block !important;
+        padding-bottom:50px !important;
+    }
+    .sctn-baner {
+    display: block !important;
+    float: none !important;
+}
+    .sctn-bnr-dscr{
+        display:block !important;
+        width:100% !important;
+    }
+    .sctn-bnr-map {
+    display: block !important;
+    width: 100% !important;
+    height:250px;
+}
+    .sctn-bnr-mixi {
+    display: block !important;
+    width: 100% !important;
+    height:250px;
+}
+}
+@media (max-width: 768px) {
+    .add-srvc-block {
+        background-size: initial !important;
+    }
+
+    .add-srv-dscr {
+        padding-left: 60px !important;
+    }
+
+    #WhyUsSectionContainer {
+        padding-top: 10px !important;
+    }
+
+    #WhyUs-Header h3 {
+        font-size: 20pt !important;
+    }
+
+    .dbl-clmn-cont {
+        padding-top: 10px !important;
+    }
+
+    .frst-clmn-txt {
+        display: none;
+    }
+
+    .w-us-frst {
+        width: 100% !important;
+    }
+
+    .w-us-scnd {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 767px){
+    
+
+    #LastOrderContainer div{
+    display: inline-block !important;
+    font-size: 12px !important;
+}
+    #sms-body{
+    text-align:center;
+    padding: 20px !important;
+}
+    #sms-body div{
+    width:100% !important;
+    display: inline-block;
+}
+
+    .carbtn {
+        margin-bottom: 5px !important;
+    }
+
+    .btn-opacity, #btn-cancel-search{
+        width: 100% !important;
+    }
+    #tarif-data{
+        font-size: 12px;
+    }
+    #result-header button{
+        width:90% !important;
+        margin-top:10px !important;
+        margin-right:0!important;
+    }
+
+
+
+    #driver-info-contact .row div{
+    padding:0 !important;
+}
+    #search-result-content{
+        padding-top:10px !important;
+    }
+    #result-header div + div{
+        margin-bottom:5px !important;
+    }
+
+    #result-data{
+        display:block !important;
+    }
+    #result-data div{
+        margin: 15px 15px !important;
+        display:block !important;
+        height: 45px;
+        padding: 0 20px;
+    }
+    #result-data svg{
+    height: 45px !important;
+    width: 20% !important;
+    display:inline-block !important;
+    float:left;
+}
+    #result-data label{
+    display: inline-block;
+    margin-left: 10px;
+    float: right;
+    width: 75% !important;
+    text-align:end !important;
+}
+
+
+    .smart-header{
+        margin-bottom:20px !important;
+    }
+    #order-body form p {
+    font-size:12px !important;
+}
+
+    #order-header:nth-child(1){
+        font-size:18px !important;
+    }
+    #order-header div + div {
+    font-size: 12px !important;
+}
+    #cars-count{
+        display:none;
+    }
+    #price-container{
+        padding:0 !important;
+    }
+
+    #ErrorMsgBlock{
+   
+    margin-bottom: 5px !important;
+}
+
+    .add-service-row div{
+        text-align:center;
+    }
+    .service-description{
+        text-indent:0 !important;
+    }
+    #tarif-data {
+    
+    margin-top: 0px !important;
+}
+    #result-header {
+    margin-bottom: 0px !important;
+}
+    #search-content{
+        padding-top:10px !important;
+    }
+    #loader {
+    margin: 0px auto 20px !important;
+}
+    #customer-data-cont {
+    margin-bottom: 20px !important;
+}
+    #contacts-block {
+    width: 100% !important;
+    border-radius: 0px !important;
+}
+
+    #contacts-container {
+    height: 100% !important;
+    background-image: none !important;
+    padding: 0 !important; 
+}
+    #driver-body {
+    padding: 0 5% 5% !important;
+    display: block;
+}
+    #driver-description {
+     display: block !important; 
+     width: 100% !important; 
+     text-align: center !important; 
+     padding: 0px !important; 
+}
+    #driver-form{
+    display: none !important;
+}
+    .card {
+    width: 250px !important;
+    padding: 20px 10px !important;
+}
+    
+    #order-wrapper {
+    padding-top: 10px !important;
+}
+    #order-header {
+    margin-bottom: 10px !important;
+}
+    #order-body{
+        padding: 0 0px !important;
+    }
+    #search_car{
+        margin-top:5px;
+    }
+    .hide-to-768{
+        display:none !important;
+    }
+    
+    .numbers-list{
+            float: right !important;
+    }
+    .sections-list{
+        display: inline-block !important;
+    }
+    .dd-numbers{
+        width: 100% !important;
+        position: absolute !important;
+        top: 70px !important;
+        left: 0 !important;
+        text-indent: 40px !important;
+        font-size: 14px !important;
+        }
+    #order-container input[type="text"], #order-container input[type="tel"], #order-container textarea{
+        margin-bottom:5px !important;
+    }
+    .car-img-block{
+        margin-bottom:5px !important;
+    }
+    
+}
+@media (max-width: 991px){
+    
+    #smart-taxi-container, #smart-taxi-container-seporator{
+        display:none !important;
+    }
+    .mrg-top-to-991-30{
+        margin-top:30px !important;
+    }
+    .hide-to-991{
+        display:none !important;
+    }
+    .numbers{
+            margin-right: 0px !important;
+    }
+}
+@media (min-width: 992px){
+
+    .hide-from-992{
+        display:none !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 1199px){
+    .card {
+    padding: 20px 20px !important;
+}
+    #order-body{
+        padding:0 10% !important;
+    }
+    .hide-to-1199{
+        display:none !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 1366px) {
+    #price-container{
+        padding: 50px 10% 0 !important;
+   }
+    #driver-body{
+        padding: 0 10% 10% !important;
+    }
+    #contacts-container{
+        padding:10% !important;
+    }
+    .smart-header {
+        text-align: center;
+        margin-bottom: 40px !important;
+    }
+}
+/*@media (max-width: 1199px){
+    #contacts-container{
+        padding:10%;
+    }
+    #driver-body{
+        padding: 0 10% 10% !important;
+    }
+   #price-container{
+        padding: 50px 10% 0 !important;
+   }
+    .smart-header {
+        text-align: center;
+        margin-bottom: 40px !important;
+    }
+}*/
+@media (min-width: 768px){
+    .hide-from-768{
+        display:none !important;
+    }
+    #soc-nw{
+        margin-top:50px;
+    }
+    #cars-count{
+
+    }
+}
+
+@media (min-width: 1200px){
+    #add-service-block{
+        min-width:820px;
+    }
+    #order-body{
+        padding:0 20% !important;
+    }
+    .numbers{
+        margin-top: 13px  !important;
+    }
+}
+
+
+/*.mrg-top-to-1199-30 {
+        margin-top:30px !important;
+    }*/
+@media (max-width: 1079px) {
+    #wrapper-airport-bnnr {
+        display: none !important;
+    }
+}
